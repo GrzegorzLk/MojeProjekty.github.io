@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Grzegorz Łojek Projekty</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+Projects in 2000-2020.
+</header>
+
+<section id="section1">
+
+<nav>
+  <ul  >
+    <li onclick="changeProject(1)" > Składowisko</li>
+    <li onclick="changeProject(2)" > Linia produkcyjna </li>
+    <li onclick="changeProject(3)" > Powlekarka </li>
+    <li onclick="changeProject(4)" > Kontakt </li>
+  </ul>
+
+</nav>
+
+  <section id="section2">
+    <picture class="project1">
+      <img src="CY01.jpg" alt="Coilyard" style="width:auto;">
+    </picture>
+    <picture class="project1">
+      <img src="CY02.jpg" alt="Coilyard" style="width:auto;">
+    </picture>
+
+    <picture class="project2">
+      <img src="DSC_0401.jpg" alt="Coilyard" style="width:auto;">
+    </picture>
+    <picture class="project2">
+      <img src="DSC_0414.jpg" alt="Coilyard" style="width:auto;">
+    </picture>
+    <picture class="project2">
+      <img src="DSC_0468.jpg" alt="Coilyard" style="width:auto;">
+    </picture>
+
+    <picture class="project3">
+      <img src="CCC01.jpg" alt="Coilyard" style="width:auto;">
+    </picture>
+    <picture class="project3">
+      <img src="CCC02.jpg" alt="Coilyard" style="width:auto;">
+    </picture>
+    <article class="project4">
+     Zostaw swoje dane, nasz dział handlowy skontaktuje się z Tobą.
+      <form name="contactForm" action="" onsubmit="return validateForm()">
+        <label for="fname"> Imię </label>
+        <input type="text" id="fname" name="firstname" placeholder="twoje imię">
+        <label for="fsname"> Nazwisko </label>
+        <input type="text" id="fsname" name="surname" placeholder="twoje nazwisko">
+        <label for="ftel"> Telefon </label>
+        <input type="text" id="ftel" name="tel" placeholder="telefon">
+        <select id="ftype" name="ftype">
+          <option value="offer" >Zapytanie ofertowe </option>
+          <option value="warranty" >Reklamacja </option>
+        </select>
+        <input type="submit" value="wyślij">
+      </form>
+    </article>
+  </section>
+  <article class="project1">
+    Major Features of New System
+    The major features of the new automation system, as
+    proposed by the selected suppliers, include:
+    <li class="para">Unmanned Crane Operation - Each crane
+    executes Work Instructions, which are generated
+    either automatically by the Level 3 enterprise
+    system or manually by the operator in the central
+    pulpit.</li>
+    <li class="para">Remote Crane Operation - In order to handle
+    exception conditions, all motions for a selected
+    crane can be made directly by the operator from
+    either of two remote operation stations located in
+    the central pulpit.</li>
+    <li class="para">Automatic Slab Tracking & Inventory – All
+    slab movements are tracked and stored in a
+    central database.</li>
+    <li class="para">Slab Position Sensor – Laser based slab
+    recognition and position measurement system
+    enabled automatic pick-up of slabs from railcars
+    and tables, and provides consistent and safe yard
+    handling practice.</li>
+    <li class="para">Variable Speed Drives for Improved Crane
+    Performance and Control – Provides more
+    accurate and consistent stacking, and a reduction
+    in mechanical damage.</li>
+    <li class="para">Integrated Crane and Roller Table Control –
+    Table motion is interlocked with crane motion to
+    enhance safety and reduce equipment damage.</li>
+</article>
+  <article class="project2">
+    The automatic liquid packaging line is an industrial line of our design. We were guided primarily by functionality, so the line was built in modular form. It is possible to take out entire functional stations and set them up in such an order as to achieve the desired goals. It is used for pouring liquids into bottles and screwing dedicated closures on them, for example: dropper, aerosol pump, cap. The user can not only equip the unit with tooling for other sizes of closures and packages but can also use packages with completely different functionalities. Recipes entered and stored in the control system allow easy selection of the right set of operating parameters, which guarantees a reliable and repeatable packaging process.
+  </article>
+  <article class="project3">
+    Coater is a device used in the pharmaceutical industry for coating tablets with aqua-based, organic or sugar solutions. Thanks to the possibility of regulating the process parameters, it is possible to precisely match the technological conditions to the product requirements. Coating machines are equipped with specialized titanium dosing nozzles, ensuring the highest accuracy and repetitive nature of the process. A patented system for automatic adjustment of the distance between the spray arm and the bed is implemented in the device, which also translates into precise coating of tablets with the coating solution. Tablets are loaded into the coater manually or through a loading chute. Tablets are discharged through a discharge chute mounted inside the drum. This process run in fully automatic mode based on recipes stored on the hard disk of the control computer, and process reports are saved in encrypted files so that only authorized personnel can read them. Coaters manufactured by ZMR have drum capacities from even 5. to 1000 liters.
+  </article>
+
+
+</section>
+
+<footer>
+"This site contains copyrighted material the use of which has not always been specifically authorized by the copyright owner. For educational purposes only."
+</footer>
+
+</body>
+
+<script>
+  changeProject(1);
+  function validateForm() {
+    let x = document.forms["contactForm"]["fname"].value;
+    if (x == "") {
+      alert("Name must be filled out");
+      return false;
+    }
+    let y = document.forms["contactForm"]["fsname"].value;
+    if (y == "") {
+      alert("Surname must be filled out");
+      return false;
+    }
+    let z = document.forms["contactForm"]["ftel"].value;
+    if (z == "" ) {
+      alert("Telephone must be filled out");
+      return false;
+    }
+    var regExp = /[a-zA-Z]/g;
+    if(regExp.test(z)){
+      alert("Telephone - invalid characters!");
+      return false;
+    }
+    return true;
+  }
+  function changeProject(projectNo) {
+    var doc = document.getElementsByClassName('project1');
+    for (var i = 0; i < doc.length; i++) {
+      if(projectNo==1)
+        doc[i].style.display = 'block';
+      else
+        doc[i].style.display = 'none';
+    }
+    doc = document.getElementsByClassName('project2');
+    for (var i = 0; i < doc.length; i++) {
+      if(projectNo==2)
+        doc[i].style.display = 'block';
+      else
+        doc[i].style.display = 'none';
+    }
+    doc = document.getElementsByClassName('project3');
+    for (var i = 0; i < doc.length; i++) {
+      if(projectNo==3)
+        doc[i].style.display = 'block';
+      else
+        doc[i].style.display = 'none';
+    }
+    doc = document.getElementsByClassName('project4');
+    for (var i = 0; i < doc.length; i++) {
+      if(projectNo==4)
+        doc[i].style.display = 'block';
+      else
+        doc[i].style.display = 'none';
+    }
+  }
+
+</script>
+
+</html>
